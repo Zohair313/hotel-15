@@ -9,7 +9,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-white">
         <Header onBookClick={() => setIsModalOpen(true)} />
         <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
