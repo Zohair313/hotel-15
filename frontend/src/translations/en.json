@@ -1,0 +1,47 @@
+{
+  "header": {
+    "hostel": "Hostel Rooms",
+    "luggage": "Luggage Storage",
+    "location": "Location",
+    "book_now": "Book Now"
+  },
+  "hero": {
+    "title_1": "Arrive.",
+    "title_2": "Secure.",
+    "title_3": "Explore.",
+    "subtitle": "Baixa Heartbeat • The Soul of Lisbon",
+    "cta": "See Vacancy",
+    "badge": "Heart of Lisbon",
+    "tagline": "Modern comfort meets the soul of Lisbon. Premium rooms and elite storage in one elegant location."
+  },
+  "selection": {
+    "header_sub": "Our Inventory",
+    "header_main": "Select Your Lisbon Experience",
+    "header_desc": "Compare our curated spaces and secure storage options.",
+    "shared_title": "Artisan Dorms",
+    "shared_desc": "Premium bunk beds with privacy curtains.",
+    "private_title": "Private Nooks",
+    "private_desc": "Hotel-quality comfort in the heart of Baixa.",
+    "storage_title": "Smart Lockers",
+    "storage_desc": "CCTV monitored reinforced steel lockers.",
+    "lounge_title": "Social Hub",
+    "lounge_desc": "Free access to the coffee bar and co-working area.",
+    "select_btn": "Select Choice",
+    "included_btn": "Included with Stay"
+  },
+  "services": {
+    "title": "Choose Your Service",
+    "tab_hostel": "Accommodation",
+    "tab_luggage": "Luggage Storage",
+    "dorm_title": "Social Dorm n' Vibe",
+    "private_title": "Private Double Room",
+    "storage_title": "Secure Locker Space",
+    "faq_title": "Common Questions",
+    "rules_title": "House Rules"
+  },
+  "footer": {
+    "visit_us": "Our Primary Location",
+    "contacts": "Contacts",
+    "open_maps": "Open in Google Maps"
+  }
+}

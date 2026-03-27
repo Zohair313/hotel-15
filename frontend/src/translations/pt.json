@@ -1,0 +1,47 @@
+{
+  "header": {
+    "hostel": "Quartos Hostel",
+    "luggage": "Armazenamento Bagagens",
+    "location": "Localização",
+    "book_now": "Reservar Agora"
+  },
+  "hero": {
+    "title_1": "Chegue.",
+    "title_2": "Proteja.",
+    "title_3": "Viva.",
+    "subtitle": "O Coração da Baixa • A Alma de Lisboa",
+    "cta": "Reservar Agora",
+    "badge": "No Centro de Lisboa",
+    "tagline": "O conforto moderno encontra a alma de Lisboa. Quartos premium e armazenamento de elite num local elegante."
+  },
+  "selection": {
+    "header_sub": "O Nosso Inventário",
+    "header_main": "Selecione a Sua Experiência em Lisboa",
+    "header_desc": "Compare os nossos espaços com curadoria e opções de armazenamento seguro.",
+    "shared_title": "Dormitórios Artisan",
+    "shared_desc": "Beliches premium com cortinas de privacidade.",
+    "private_title": "Recantos Privados",
+    "private_desc": "Conforto com qualidade de hotel no coração da Baixa.",
+    "storage_title": "Cofres Inteligentes",
+    "storage_desc": "Cofres de aço reforçado monitorizados por CCTV 24/7.",
+    "lounge_title": "Hub Social",
+    "lounge_desc": "Acesso gratuito à cafetaria e área de co-working.",
+    "select_btn": "Selecionar Escolha",
+    "included_btn": "Incluído na Estadia"
+  },
+  "services": {
+    "title": "Escolha o Seu Serviço",
+    "tab_hostel": "Alojamento",
+    "tab_luggage": "Bagagens",
+    "dorm_title": "Dormitório Social n' Vibe",
+    "private_title": "Quarto Duplo Privado",
+    "storage_title": "Espaço de Cofre Seguro",
+    "faq_title": "Perguntas Frequentes",
+    "rules_title": "Regras da Casa"
+  },
+  "footer": {
+    "visit_us": "Nossa Localização Principal",
+    "contacts": "Contactos",
+    "open_maps": "Abrir no Google Maps"
+  }
+}
