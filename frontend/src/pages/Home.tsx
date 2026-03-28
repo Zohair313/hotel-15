@@ -175,7 +175,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
             {/* 1. Shared Dorms */}
             <div className="group bg-white rounded-[3rem] overflow-hidden shadow-[0_30px_70px_-20px_rgba(0,0,0,0.1)] hover:shadow-[0_40px_90px_-20px_rgba(0,0,0,0.2)] transition-all duration-500 flex flex-col border border-slate-100 hover:-translate-y-4">
               <div className="relative h-64 overflow-hidden">
-                <img src="/dorm.png" alt="Shared Dorm" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img src="dorm.png" alt="Shared Dorm" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute top-5 left-5 bg-white/20 backdrop-blur-xl border border-white/30 text-white px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-xl">Social & Fun</div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-60"></div>
               </div>
@@ -197,7 +197,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
             {/* 2. Private Rooms */}
             <div className="group bg-white rounded-[3rem] overflow-hidden shadow-[0_30px_70px_-20px_rgba(0,0,0,0.1)] hover:shadow-[0_40px_90px_-20px_rgba(0,0,0,0.2)] transition-all duration-500 flex flex-col border border-slate-100 hover:-translate-y-4">
               <div className="relative h-64 overflow-hidden">
-                <img src="/private.png" alt="Private Room" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img src="private.png" alt="Private Room" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute top-5 left-5 bg-blue-600/30 backdrop-blur-xl border border-white/20 text-white px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-xl">Quiet & Calm</div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-60"></div>
               </div>
@@ -219,7 +219,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
             {/* 3. Storage */}
             <div className="group bg-white rounded-[3rem] overflow-hidden shadow-[0_30px_70px_-20px_rgba(0,0,0,0.1)] hover:shadow-[0_40px_90px_-20px_rgba(0,0,0,0.2)] transition-all duration-500 flex flex-col border border-slate-100 hover:-translate-y-4">
               <div className="relative h-64 overflow-hidden">
-                <img src="/storage.png" alt="Luggage Storage" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img src="storage.png" alt="Luggage Storage" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute top-5 left-5 bg-lisbon-yellow/30 backdrop-blur-xl border border-white/20 text-white px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-xl">Always Secure</div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-60"></div>
               </div>
@@ -241,7 +241,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
             {/* 4. Social Lounge */}
             <div className="group bg-white rounded-[3rem] overflow-hidden shadow-[0_30px_70px_-20px_rgba(0,0,0,0.1)] hover:shadow-[0_40px_90px_-20px_rgba(0,0,0,0.2)] transition-all duration-500 flex flex-col border border-slate-100 hover:-translate-y-4">
               <div className="relative h-64 overflow-hidden">
-                <img src="/lounge.png" alt="Social Lounge" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img src="lounge.png" alt="Social Lounge" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute top-5 left-5 bg-emerald-600/30 backdrop-blur-xl border border-white/20 text-white px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-xl">Free Access</div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-60"></div>
               </div>
@@ -465,7 +465,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
 
             <div className="w-full lg:w-2/5 relative z-10">
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-2 border-white/10 group-hover:scale-[1.02] transition-transform duration-700">
-                <img src="/lisbon_newsletter_plane.png" alt="Travel Tips" className="w-full h-auto" />
+                <img src="lisbon_newsletter_plane.png" alt="Travel Tips" className="w-full h-auto" />
                 <div className="absolute inset-0 bg-gradient-to-t from-lisbon-blue/20 to-transparent"></div>
               </div>
             </div>

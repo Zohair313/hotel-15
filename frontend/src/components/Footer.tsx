@@ -10,7 +10,7 @@ export const Footer = () => {
           {/* Logo & About */}
           <div className="space-y-8">
             <div className="flex items-center gap-4">
-              <img src="/logo.png" alt="Hostel 15" className="h-[60px] w-auto object-contain" />
+              <img src="logo.png" alt="Hostel 15" className="h-[60px] w-auto object-contain" />
               <span className="font-heading font-black text-2xl tracking-tighter text-lisbon-blue">Hostel 15</span>
             </div>
             <p className="text-slate-500 text-sm font-bold leading-relaxed max-w-xs block opacity-80">

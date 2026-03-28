@@ -82,7 +82,7 @@ const HostelAndLuggage = () => {
                       </div>
                     </div>
                     <div className="h-64 md:h-full rounded-2xl overflow-hidden shadow-lg">
-                      <img src="/dorm.png" alt="Hostel Dorm" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                      <img src="dorm.png" alt="Hostel Dorm" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                     </div>
                   </div>
                 </section>
@@ -138,7 +138,7 @@ const HostelAndLuggage = () => {
                       </div>
                     </div>
                     <div className="h-64 md:h-full rounded-2xl overflow-hidden shadow-lg">
-                      <img src="/storage.png" alt="Security Lockers" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                      <img src="storage.png" alt="Security Lockers" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                     </div>
                   </div>
                 </section>

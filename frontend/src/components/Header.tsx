@@ -130,7 +130,7 @@ export const Header = ({ onBookClick }: { onBookClick: () => void }) => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-4 group cursor-pointer no-underline">
           <div className="flex items-center justify-center">
-            <img src="/logo.png" alt="Hostel 15" className="h-[75px] w-auto object-contain" />
+            <img src="logo.png" alt="Hostel 15" className="h-[75px] w-auto object-contain" />
           </div>
           <div className="flex flex-col -space-y-1">
             <span className={`font-heading font-black text-2xl tracking-[0.1em] uppercase ${isScrolled || !isHome ? 'text-slate-900' : 'text-white'}`}>Hostel 15</span>
