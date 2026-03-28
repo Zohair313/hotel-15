@@ -108,11 +108,11 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
             <div className="animate-marquee">
               {/* Set 1 & 2 for continuous loop */}
               {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex items-center gap-12 md:gap-40 px-6 md:px-12">
-                  <span className="text-xl md:text-3xl font-black uppercase tracking-tighter text-blue-600 shrink-0">Booking.com</span>
-                  <span className="text-xl md:text-3xl font-black uppercase tracking-tighter text-rose-500 italic shrink-0">Airbnb</span>
-                  <span className="text-xl md:text-3xl font-black uppercase tracking-tighter text-slate-900 shrink-0">Expedia</span>
-                  <div className="flex items-center gap-3 shrink-0">
+                <div key={i} className="flex items-center gap-16 md:gap-48 px-8 md:px-24 flex-shrink-0">
+                  <span className="text-xl md:text-3xl font-black uppercase tracking-tighter text-blue-600 whitespace-nowrap">Booking.com</span>
+                  <span className="text-xl md:text-3xl font-black uppercase tracking-tighter text-rose-500 italic whitespace-nowrap">Airbnb</span>
+                  <span className="text-xl md:text-3xl font-black uppercase tracking-tighter text-slate-900 whitespace-nowrap">Expedia</span>
+                  <div className="flex items-center gap-4 whitespace-nowrap">
                     <LucideAward className="w-8 h-8 md:w-10 md:h-10 text-emerald-500" />
                     <span className="text-lg md:text-2xl font-black uppercase tracking-tighter text-slate-900">Turismo De Portugal</span>
                   </div>
