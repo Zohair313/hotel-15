@@ -84,7 +84,7 @@ const PanoramaRoom = ({ progress }: { progress: any }) => {
   const mousePos = useRef({ x: 0, y: 0 });
   
   // Use the local image downloaded to public/ to avoid CORS issues
-  const texture = useTexture('/high_res_royal_suite.png', (tex) => {
+  const texture = useTexture('high_res_royal_suite.png', (tex) => {
     console.log('Texture loaded successfully', tex);
     tex.needsUpdate = true;
   });
@@ -240,7 +240,7 @@ export default function ScrollExperience({ onBookClick }: ScrollExperienceProps)
           className="w-full h-full"
         >
           <Canvas camera={{ position: [0, 0, 0.1], fov: isMobile ? 90 : 75 }}>
-            <Suspense fallback={null}>
+            <Suspense fallback={<div className="w-full h-full bg-slate-900 animate-pulse" />}>
               <PanoramaRoom progress={smoothProgress} />
             </Suspense>
           </Canvas>
