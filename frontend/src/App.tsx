@@ -26,7 +26,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <Router>
+    <Router basename="/hotel-15">
       <ScrollToTop />
       <SmoothScroll>
         <div className="relative min-h-screen font-body selection:bg-lisbon-yellow selection:text-lisbon-blue overflow-x-hidden">
