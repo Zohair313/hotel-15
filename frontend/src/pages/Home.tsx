@@ -147,7 +147,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <div className="relative h-80 overflow-hidden">
-                  <img src="high_res_royal_suite.png" alt="Royalty Suite" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img src={`${import.meta.env.BASE_URL}high_res_royal_suite.png`} alt="Royalty Suite" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-5 left-5 bg-blue-600/30 backdrop-blur-xl border border-white/20 text-white px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-xl text-center">Royalty Suite</div>
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-60"></div>
                 </div>
@@ -175,7 +175,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <div className="relative h-80 overflow-hidden">
-                  <img src="storage.png" alt="Luggage Storage" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img src={`${import.meta.env.BASE_URL}storage.png`} alt="Luggage Storage" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-5 left-5 bg-lisbon-yellow/30 backdrop-blur-xl border border-white/20 text-white px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-xl">Always Secure</div>
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-60"></div>
                 </div>
@@ -203,7 +203,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <div className="relative h-80 overflow-hidden">
-                  <img src="lounge.png" alt="Social Lounge" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img src={`${import.meta.env.BASE_URL}lounge.png`} alt="Social Lounge" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-5 left-5 bg-emerald-600/30 backdrop-blur-xl border border-white/20 text-white px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-xl">Free Access</div>
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-60"></div>
                 </div>
@@ -258,7 +258,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
                 </a>
               </div>
               <div className="relative overflow-hidden group/img min-h-[450px] md:min-h-0 bg-slate-900">
-                 <div className="absolute inset-0 bg-[url('lisbon_cityscape.png')] bg-cover bg-center group-hover:scale-110 transition-transform duration-[5s]"></div>
+                 <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-[5s]" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}lisbon_cityscape.png)` }}></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-lisbon-blue via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
@@ -472,7 +472,7 @@ export default function Home({ onBookClick }: { onBookClick: () => void }) {
 
               <div className="w-full lg:w-2/5 relative z-10">
                 <div className="relative rounded-2xl md:rounded-[3rem] overflow-hidden shadow-2xl border-2 border-white/10 group-hover:scale-[1.02] transition-transform duration-700">
-                  <img src="lisbon_newsletter_plane.png" alt="Travel Tips" className="w-full h-auto" />
+                  <img src={`${import.meta.env.BASE_URL}lisbon_newsletter_plane.png`} alt="Travel Tips" className="w-full h-auto" />
                   <div className="absolute inset-0 bg-gradient-to-t from-lisbon-blue/20 to-transparent"></div>
                 </div>
               </div>

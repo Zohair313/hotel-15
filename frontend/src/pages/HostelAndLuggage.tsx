@@ -78,7 +78,7 @@ const HostelAndLuggage = () => {
             className="absolute inset-0 z-0"
           >
             <img
-              src="lisbon_cityscape.png"
+              src={`${import.meta.env.BASE_URL}lisbon_cityscape.png`}
               alt="Background Blush Pure"
               className="w-full h-full object-cover transition-all duration-1000"
             />
@@ -153,7 +153,7 @@ const HostelAndLuggage = () => {
                 {HOSTEL_RATES.map((rate, i) => (
                   <div key={rate.id} className={`grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                     <motion.div variants={itemVariants} className={`aspect-[4/3] rounded-[3.5rem] overflow-hidden shadow-2xl relative group border-2 border-white/5 ${i % 2 !== 0 ? 'md:order-2 md:translate-y-12' : 'md:-translate-y-12'}`}>
-                      <img src={rate.id === 'bunk' ? "hostel_dorm.png" : "high_res_royal_suite.png"} alt={rate.name.en} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                      <img src={rate.id === 'bunk' ? `${import.meta.env.BASE_URL}hostel_dorm.png` : `${import.meta.env.BASE_URL}high_res_royal_suite.png`} alt={rate.name.en} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/80 to-transparent flex items-end p-10">
                         <span className="text-lisbon-yellow font-heading font-black text-xs uppercase tracking-widest flex items-center gap-3">
                           <LucideMaximize2 size={16} /> Detail View
@@ -184,7 +184,7 @@ const HostelAndLuggage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-40 items-center">
                 <motion.div variants={itemVariants} className="aspect-square rounded-[4rem] bg-white/5 border-8 border-white/5 flex items-center justify-center p-24 relative shadow-3xl overflow-hidden group">
                   <LucideBaggageClaim size={300} className="text-white/5 absolute" />
-                  <img src="storage.png" alt="Storage" className="w-full h-full object-contain relative z-10 drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                  <img src={`${import.meta.env.BASE_URL}storage.png`} alt="Storage" className="w-full h-full object-contain relative z-10 drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
                 </motion.div>
                 <div className="space-y-16">
                   <div className="space-y-6">

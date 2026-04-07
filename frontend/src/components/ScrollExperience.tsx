@@ -240,7 +240,7 @@ export default function ScrollExperience({ onBookClick }: ScrollExperienceProps)
           className="w-full h-full"
         >
           <Canvas camera={{ position: [0, 0, 0.1], fov: isMobile ? 90 : 75 }}>
-            <Suspense fallback={<div className="w-full h-full bg-slate-900 animate-pulse" />}>
+            <Suspense fallback={null}>
               <PanoramaRoom progress={smoothProgress} />
             </Suspense>
           </Canvas>

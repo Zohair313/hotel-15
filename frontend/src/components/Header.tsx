@@ -167,7 +167,7 @@ export const Header = ({ onBookClick }: { onBookClick: () => void }) => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-4 group cursor-pointer no-underline">
           <div className="flex items-center justify-center bg-transparent">
-            <img src="logo.png" alt="Hostel 15" className={`h-[45px] md:h-[55px] w-auto object-contain ${logoBlend}`} />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Hostel 15" className={`h-[45px] md:h-[55px] w-auto object-contain ${logoBlend}`} />
           </div>
           <div className="flex flex-col -space-y-1">
             <span className={`font-heading font-black text-lg md:text-xl tracking-[0.1em] uppercase ${textColor}`}>Hostel 15</span>
