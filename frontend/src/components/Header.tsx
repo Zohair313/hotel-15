@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LucideX, LucideShieldCheck, LucideBedSingle, LucideBaggageClaim, LucideSend, LucideGlobe, LucideMenu } from 'lucide-react';
+import { 
+  LucideX, LucideShieldCheck, LucideBedSingle, LucideBaggageClaim, 
+  LucideSend, LucideGlobe, LucideMenu, LucideUser, LucidePhone, 
+  LucideCalendar, LucideUsers 
+} from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Magnetic from './abstract/Magnetic';
 
 export const BookingModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [step, setStep] = useState(1);
@@ -14,17 +19,24 @@ export const BookingModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: ()
 
   const handleBooking = async () => {
     if (!formData.name || !formData.phone || !formData.date || !formData.quantity) {
-      alert("Please fill in all fields");
       return;
     }
 
     setLoading(true);
-
-    // Mock booking logic
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
-    }, 1000);
+    }, 1500);
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
@@ -35,86 +47,134 @@ export const BookingModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: ()
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" 
+            className="absolute inset-0 bg-slate-950/90 backdrop-blur-xl" 
             onClick={onClose} 
           />
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 30 }}
-            transition={{ type: 'spring', damping: 20, stiffness: 300 }}
-            className="bg-white rounded-3xl w-full max-w-lg relative overflow-hidden shadow-2xl"
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="bg-[#0A0A0A] border border-white/10 rounded-[2rem] w-full max-w-md relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,1)]"
           >
-            <button onClick={onClose} className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600"><LucideX size={20} /></button>
+            {/* Design Accents */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-lisbon-yellow/5 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-600/5 rounded-full blur-[60px] translate-y-1/2 -translate-x-1/2" />
+
+            <button onClick={onClose} className="absolute top-6 right-6 p-2 text-white/20 hover:text-white transition-colors z-20"><LucideX size={18} /></button>
 
             {success ? (
               <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="p-12 text-center"
+                className="p-10 md:p-12 text-center"
               >
-                <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <LucideShieldCheck size={40} />
+                <div className="relative mb-8 inline-block">
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', delay: 0.2 }}
+                    className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.3)]"
+                  >
+                    <LucideShieldCheck size={32} className="text-white" />
+                  </motion.div>
                 </div>
-                <h3 className="font-heading text-2xl font-bold mb-3">Booking Requested!</h3>
-                <p className="text-slate-500 mb-8">Success! We'll confirm your arrival time via WhatsApp shortly. Payment is on premises.</p>
-                <button onClick={onClose} className="w-full bg-slate-900 text-white py-4 rounded-xl font-bold">Back to Site</button>
+                <h3 className="font-heading text-xl font-bold mb-3 text-white uppercase tracking-tight">Request Received</h3>
+                <p className="text-white/40 font-medium mb-8 leading-relaxed text-[11px]">Our concierge will contact you on WhatsApp within minutes to finalize your Lisbon sanctuary.</p>
+                <button onClick={onClose} className="w-full bg-white text-black py-4 rounded-xl font-black uppercase text-[9px] tracking-widest hover:bg-lisbon-yellow transition-all shadow-xl">Return to Experience</button>
               </motion.div>
             ) : (
-              <div className="p-8">
-                <h3 className="font-heading text-2xl font-bold mb-6">Advance Booking</h3>
+              <div className="p-8 md:p-10 relative z-10">
+                {/* Progress Indicator */}
+                <div className="flex gap-1.5 mb-8">
+                  <div className={`h-0.5 flex-1 rounded-full transition-all duration-500 ${step >= 1 ? 'bg-lisbon-yellow' : 'bg-white/10'}`} />
+                  <div className={`h-0.5 flex-1 rounded-full transition-all duration-500 ${step >= 2 ? 'bg-lisbon-yellow' : 'bg-white/10'}`} />
+                </div>
+
+                <div className="mb-8">
+                  <span className="text-lisbon-yellow font-heading font-black tracking-[0.4em] text-[8px] uppercase mb-1.5 block">Sanctuary Access</span>
+                  <h3 className="font-heading text-xl md:text-2xl font-black text-white uppercase tracking-tighter leading-none">
+                    {step === 1 ? 'Select Your Scene' : 'Guest Information'}
+                  </h3>
+                </div>
 
                 <AnimatePresence mode="wait">
                   {step === 1 ? (
                     <motion.div 
                       key="step1"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      variants={containerVariants}
+                      initial="hidden"
+                      animate="visible"
                       exit={{ opacity: 0, x: -20 }}
-                      className="grid grid-cols-2 gap-4"
+                      className="grid grid-cols-1 sm:grid-cols-2 gap-3"
                     >
-                      <button
+                      <motion.button
+                        variants={itemVariants}
                         onClick={() => { setBookingType('bunk'); setStep(2); }}
-                        className="p-6 border-2 border-slate-100 rounded-2xl flex flex-col items-center gap-4 hover:border-lisbon-yellow hover:bg-lisbon-yellow/5 transition-all text-center"
+                        className="p-6 bg-white/[0.03] border border-white/10 rounded-[1.5rem] flex flex-col items-center gap-4 hover:border-lisbon-yellow hover:bg-white/[0.06] transition-all group relative overflow-hidden"
                       >
-                        <LucideBedSingle className="text-lisbon-blue" size={32} />
-                        <div>
-                          <span className="block font-bold">Hostel Bed</span>
-                          <span className="text-xs text-slate-400 font-medium tracking-tight">From €15 / night</span>
+                        <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-lisbon-yellow transition-all duration-500">
+                          <LucideBedSingle className="text-lisbon-yellow group-hover:text-black" size={20} />
                         </div>
-                      </button>
-                      <button
+                        <div className="text-center">
+                          <span className="block font-heading font-bold text-white text-sm uppercase tracking-tight mb-0.5">Hostel Bed</span>
+                          <span className="text-[8px] text-white/30 font-black uppercase tracking-widest">From €15 / NT</span>
+                        </div>
+                      </motion.button>
+                      
+                      <motion.button
+                        variants={itemVariants}
                         onClick={() => { setBookingType('locker'); setStep(2); }}
-                        className="p-6 border-2 border-slate-100 rounded-2xl flex flex-col items-center gap-4 hover:border-lisbon-yellow hover:bg-lisbon-yellow/5 transition-all text-center"
+                        className="p-6 bg-white/[0.03] border border-white/10 rounded-[1.5rem] flex flex-col items-center gap-4 hover:border-lisbon-yellow hover:bg-white/[0.06] transition-all group relative overflow-hidden"
                       >
-                        <LucideBaggageClaim className="text-lisbon-tile" size={32} />
-                        <div>
-                          <span className="block font-bold">Secure Locker</span>
-                          <span className="text-xs text-slate-400 font-medium tracking-tight">From €1 / hour</span>
+                        <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-500">
+                          <LucideBaggageClaim className="text-blue-500 group-hover:text-white" size={20} />
                         </div>
-                      </button>
+                        <div className="text-center">
+                          <span className="block font-heading font-bold text-white text-sm uppercase tracking-tight mb-0.5">Locker</span>
+                          <span className="text-[8px] text-white/30 font-black uppercase tracking-widest">From €1 / HR</span>
+                        </div>
+                      </motion.button>
                     </motion.div>
                   ) : (
                     <motion.div 
                       key="step2"
+                      variants={containerVariants}
                       initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      animate="visible"
                       exit={{ opacity: 0, x: -20 }}
+                      className="space-y-3"
                     >
-                      <div className="space-y-4">
-                        <input type="text" placeholder="Full Name" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className="w-full p-4 bg-slate-50 border-transparent border-2 focus:border-lisbon-yellow focus:bg-white rounded-xl outline-none transition-all font-body" />
-                        <input type="tel" placeholder="WhatsApp / Phone Number" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} className="w-full p-4 bg-slate-50 border-transparent border-2 focus:border-lisbon-yellow focus:bg-white rounded-xl outline-none transition-all font-body" />
-                        <div className="grid grid-cols-2 gap-4">
-                          <input type="date" placeholder="Date" value={formData.date} onChange={e => setFormData({ ...formData, date: e.target.value })} className="w-full p-4 bg-slate-50 border-transparent border-2 focus:border-lisbon-yellow focus:bg-white rounded-xl outline-none transition-all font-body" />
-                          <input type="number" placeholder="Guests/Bags" value={formData.quantity} onChange={e => setFormData({ ...formData, quantity: e.target.value })} className="w-full p-4 bg-slate-50 border-transparent border-2 focus:border-lisbon-yellow focus:bg-white rounded-xl outline-none transition-all font-body" />
-                        </div>
+                      <motion.div variants={itemVariants} className="relative group">
+                        <LucideUser className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-lisbon-yellow transition-colors" size={16} />
+                        <input type="text" placeholder="FULL NAME" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className="w-full pl-12 pr-5 py-4 bg-white/[0.02] border border-white/10 focus:border-lisbon-yellow rounded-xl outline-none transition-all font-heading font-bold text-white uppercase text-[10px] tracking-widest placeholder:text-white/10" />
+                      </motion.div>
+
+                      <motion.div variants={itemVariants} className="relative group">
+                        <LucidePhone className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-lisbon-yellow transition-colors" size={16} />
+                        <input type="tel" placeholder="WHATSAPP NUMBER" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} className="w-full pl-12 pr-5 py-4 bg-white/[0.02] border border-white/10 focus:border-lisbon-yellow rounded-xl outline-none transition-all font-heading font-bold text-white uppercase text-[10px] tracking-widest placeholder:text-white/10" />
+                      </motion.div>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <motion.div variants={itemVariants} className="relative group">
+                          <LucideCalendar className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-lisbon-yellow transition-colors" size={16} />
+                          <input type="date" value={formData.date} onChange={e => setFormData({ ...formData, date: e.target.value })} className="w-full pl-12 pr-3 py-4 bg-white/[0.02] border border-white/10 focus:border-lisbon-yellow rounded-xl outline-none transition-all font-heading font-bold text-white uppercase text-[9px] tracking-widest" />
+                        </motion.div>
+                        <motion.div variants={itemVariants} className="relative group">
+                          <LucideUsers className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-lisbon-yellow transition-colors" size={16} />
+                          <input type="number" placeholder="COUNT" value={formData.quantity} onChange={e => setFormData({ ...formData, quantity: e.target.value })} className="w-full pl-12 pr-3 py-4 bg-white/[0.02] border border-white/10 focus:border-lisbon-yellow rounded-xl outline-none transition-all font-heading font-bold text-white uppercase text-[10px] tracking-widest placeholder:text-white/10" />
+                        </motion.div>
                       </div>
-                      <div className="flex gap-4 mt-8">
-                        <button onClick={() => setStep(1)} className="flex-1 py-4 border-2 border-slate-100 text-slate-600 font-bold rounded-xl active:scale-95 transition-all">Back</button>
-                        <button onClick={handleBooking} disabled={loading} className="flex-[2] py-4 bg-lisbon-blue text-white font-bold rounded-xl active:scale-95 transition-all shadow-xl shadow-lisbon-blue/20 flex items-center justify-center gap-2">
-                          {loading ? <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <>Request Booking <LucideSend size={18} /></>}
+
+                      <motion.div variants={itemVariants} className="flex gap-3 pt-4">
+                        <button onClick={() => setStep(1)} className="flex-1 py-4 border border-white/10 text-white/40 font-heading font-bold uppercase text-[8px] tracking-widest rounded-xl hover:bg-white/5 active:scale-95 transition-all">Back</button>
+                        <button 
+                          onClick={handleBooking} 
+                          disabled={loading || !formData.name || !formData.phone || !formData.date || !formData.quantity} 
+                          className="flex-[2] py-4 bg-lisbon-yellow disabled:bg-white/10 disabled:text-white/20 text-black font-heading font-black uppercase text-[8px] tracking-widest rounded-xl active:scale-95 transition-all shadow-[0_20px_40px_rgba(255,215,0,0.1)] flex items-center justify-center gap-2"
+                        >
+                          {loading ? <div className="w-3.5 h-3.5 border-2 border-black/30 border-t-black rounded-full animate-spin" /> : <>Request Access <LucideSend size={12} /></>}
                         </button>
-                      </div>
+                      </motion.div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -177,20 +237,24 @@ export const Header = ({ onBookClick }: { onBookClick: () => void }) => {
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
-          <Link
-            to="/services"
-            state={{ tab: 'hostel' }}
-            className={`font-heading font-black text-[10px] uppercase tracking-widest transition-colors ${textColor} ${navHoverColor}`}
-          >
-            {t('header.hostel')}
-          </Link>
-          <Link
-            to="/services"
-            state={{ tab: 'luggage' }}
-            className={`font-heading font-black text-[10px] uppercase tracking-widest transition-colors ${textColor} ${navHoverColor}`}
-          >
-            {t('header.luggage')}
-          </Link>
+          <Magnetic strength={0.2}>
+            <Link
+              to="/services"
+              state={{ tab: 'hostel' }}
+              className={`font-heading font-black text-[10px] uppercase tracking-widest transition-colors ${textColor} ${navHoverColor}`}
+            >
+              {t('header.hostel')}
+            </Link>
+          </Magnetic>
+          <Magnetic strength={0.2}>
+            <Link
+              to="/services"
+              state={{ tab: 'luggage' }}
+              className={`font-heading font-black text-[10px] uppercase tracking-widest transition-colors ${textColor} ${navHoverColor}`}
+            >
+              {t('header.luggage')}
+            </Link>
+          </Magnetic>
           <button
             onClick={toggleLanguage}
             className={`flex items-center gap-2 font-heading font-black text-[10px] uppercase tracking-[0.2em] px-4 py-2 rounded-xl border transition-all ${(!isHome || isScrolled) ? 'border-slate-200 text-slate-500 hover:text-slate-900' : 'border-white/10 text-white/60 hover:text-white'}`}
@@ -198,9 +262,11 @@ export const Header = ({ onBookClick }: { onBookClick: () => void }) => {
             <LucideGlobe size={14} /> {i18n.language.toUpperCase()}
           </button>
 
-          <button onClick={onBookClick} className="bg-lisbon-yellow text-lisbon-blue px-8 py-3 rounded-full font-heading font-bold uppercase text-[10px] tracking-widest shadow-xl shadow-lisbon-yellow/10 hover:shadow-lisbon-yellow/30 transition-all active:scale-95">
-            {t('header.book_now')}
-          </button>
+          <Magnetic strength={0.3}>
+            <button onClick={onBookClick} className="bg-lisbon-yellow text-lisbon-blue px-8 py-3 rounded-full font-heading font-bold uppercase text-[10px] tracking-widest shadow-xl shadow-lisbon-yellow/10 hover:shadow-lisbon-yellow/30 transition-all active:scale-95">
+              {t('header.book_now')}
+            </button>
+          </Magnetic>
         </nav>
 
         <div className="flex md:hidden items-center gap-4">

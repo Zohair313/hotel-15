@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#0A1128] py-16 px-6 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-slate-950 py-16 px-6 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-20 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 mb-12 items-start">
           
           {/* Logo Section */}
           <div className="md:col-span-4 flex flex-col gap-6">
@@ -66,21 +66,21 @@ export const Footer = () => {
         {/* Separator - Minimalist */}
         <div className="w-full h-px bg-white/5 mb-12" />
 
-        {/* Footer Bottom Area - Compact like screenshot */}
+        {/* Footer Bottom Area */}
         <div className="flex flex-col md:flex-row justify-between items-end md:items-center gap-8">
           <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
             <p className="text-white/20 font-heading font-black text-[9px] uppercase tracking-[0.4em]">
               © {new Date().getFullYear()} Hostel 15. All Rights Reserved.
             </p>
             <p className="text-white/5 font-heading font-black text-[8px] uppercase tracking-[0.1em]">
-               DESIGNED IN LISBON • PRO MAX ARCHITECTURE V1.1
+               DESIGNED IN LISBON • PRO MAX ARCHITECTURE V1.2
             </p>
           </div>
 
-          {/* Back Top Button exactly like screenshot 2 */}
+          {/* Back Top Button */}
           <div className="flex items-center gap-4 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg shadow-white/5 group-hover:scale-110 transition-transform">
-                <div className="w-1.5 h-1.5 bg-lisbon-blue rounded-full" />
+                <div className="w-1.5 h-1.5 bg-slate-950 rounded-full" />
              </div>
              <span className="text-white/30 font-heading font-black text-[9px] uppercase tracking-[0.3em] group-hover:text-white/60 transition-colors">Back Top</span>
           </div>

@@ -1,0 +1,42 @@
+# Lisbon Hostel Frontend
+
+React + Vite + TypeScript frontend for a Lisbon hostel. **Project root is `frontend/`**, not the workspace root.
+
+## Dev Commands (run from `frontend/`)
+
+```bash
+npm run dev      # Dev server
+npm run build    # tsc && vite build
+npm run preview  # vite preview
+```
+
+## CRITICAL: Non-root deployment path
+
+Both `vite.config.ts:7` and `App.tsx:29` hardcode `basename="/hotel-15/"`. Change both or the app breaks.
+
+## Build
+
+- `npm run build` runs `tsc` then `vite build` — TS must pass first
+- GitHub Pages-compatible: `public/404.html` exists; create empty `.nojekyll` in `public/` for Jekyll skip
+- No lint/typecheck scripts — only `dev`, `build`, `preview`
+- `public/` directory holds static assets served as-is
+
+## Architecture
+
+- `src/pages/` — Home (`/`) and HostelAndLuggage (`/services`)
+- `src/components/` — Header, Footer, CustomCursor, SmoothScroll, BookingModal
+- `src/translations/` — `en.json`, `pt.json` (i18next; English fallback, Portuguese)
+
+## CSS / Styling
+
+- Tailwind CSS with custom colors: `lisbon-yellow`, `tejo-blue`, `lisbon-blue`, `lisbon-tile`, `lisbon-sand`, `limnia-gold`
+- Fonts: Outfit (headings), Inter (body), Cormorant Garamond (serif) — loaded via Google Fonts CDN in `src/index.css`
+- Custom scrollbar styled with lisbon-yellow accent
+
+## Key Libraries
+
+- `@react-three/fiber` + `@react-three/drei` — 3D scroll experience
+- `leaflet` + `react-leaflet` — maps
+- `lenis` — smooth scroll
+- `framer-motion` — animations
+- `emailjs/browser` — email forms

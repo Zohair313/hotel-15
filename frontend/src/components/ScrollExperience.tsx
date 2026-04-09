@@ -41,16 +41,18 @@ const SceneOverlay = ({
       style={{ opacity, y, scale }}
       className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-20 px-6 text-center"
     >
-      <motion.span className="text-lisbon-yellow font-heading font-black tracking-[0.5em] text-[10px] md:text-sm uppercase mb-6 block drop-shadow-lg">
+      <motion.span className="text-lisbon-yellow font-heading font-black tracking-[0.8em] text-[8px] md:text-[10px] uppercase mb-4 block drop-shadow-lg opacity-60">
         {subtitle}
       </motion.span>
-      <h2 className="font-heading text-5xl md:text-9xl font-black text-white leading-none tracking-tighter mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] uppercase break-words px-4">
+      <h2 className="font-serif italic text-3xl md:text-6xl text-white/90 leading-none tracking-tight mb-6 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
         {title}
       </h2>
       {description && (
-        <p className={`${descriptionColorClass} font-body text-sm md:text-xl max-w-2xl font-bold tracking-tight bg-black/10 backdrop-blur-sm px-8 py-4 rounded-full border border-white/5 shadow-2xl`}>
-          {description}
-        </p>
+        <div className="px-10 py-2 border-t border-b border-white/5">
+          <p className="text-white/40 font-body font-medium text-[9px] md:text-[11px] tracking-[0.3em] uppercase leading-relaxed">
+            {description}
+          </p>
+        </div>
       )}
     </motion.div>
   );
